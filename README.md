@@ -8,7 +8,7 @@ Given following endpoint:
 
 `GET https://jsonplaceholder.typicode.com/photos/{id}` (`{id}` can be 1-5000)
 
-We will try to concurrently fetch these 5000 data, but with a timeout (1 API call for 1 ID).
+We will try to concurrently fetch these 5000 data (1 API call for 1 ID), but with a timeout (set via `timeout` URL query during call).
 
 When the timeout exceeded, the background fetches will be canceled/halted and the already-fetched-data will be returned.
 
