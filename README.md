@@ -2,6 +2,16 @@
 
 Example to demonstrate how to use `context.Context` to cancel/halt processes in goroutine.
 
+## Example
+
+Given following endpoint:
+
+`GET https://jsonplaceholder.typicode.com/photos/{id}` (`{id}` can be 1-5000)
+
+We will try to concurrently fetch these 5000 data, but with a timeout (1 API call for 1 ID).
+
+When the timeout exceeded, the background fetches will be canceled/halted and the already-fetched-data will be returned.
+
 ## Running
 
 1. Clone this repo
